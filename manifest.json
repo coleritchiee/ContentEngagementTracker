@@ -1,0 +1,15 @@
+{
+    "manifest_version": 2,
+    "name": "Content Engagement Tracker",
+    "version": "1.0",
+    "content_scripts": [{
+      "js": ["buffer_script.js"],
+      "matches": ["https://*.youtube.com/*"]
+    }],
+    "web_accessible_resources": ["buffer_script.js", "webgazer.js", "content_script.js", "jquery.js"],
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+    "permissions": ["unlimitedStorage", "storage", "tabs"],
+    "browser_action":{
+        "default_popup": "popup.html"
+    }
+  }
